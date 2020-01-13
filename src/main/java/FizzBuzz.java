@@ -30,12 +30,12 @@ public class FizzBuzz {
 
     private static String getCatchphraseByDivisible(int number, Filter<Integer> filter) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (CatchPhrase catchPhraseValue : CatchPhrase.values()) {
-            if (filter != null && filter.shouldFilter(catchPhraseValue.index)) {
+        for (catchphrase catchphraseValue : catchphrase.values()) {
+            if (filter != null && filter.shouldFilter(catchphraseValue.index)) {
                 continue;
             }
-            if (isMultipleOf(number, catchPhraseValue.index)) {
-                stringBuilder.append(catchPhraseValue.code);
+            if (isMultipleOf(number, catchphraseValue.index)) {
+                stringBuilder.append(catchphraseValue.content);
             }
         }
         return stringBuilder.length() == 0 ? String.valueOf(number) : stringBuilder.toString();
@@ -45,17 +45,17 @@ public class FizzBuzz {
         return number % target == 0;
     }
 
-    private enum CatchPhrase {
+    private enum catchphrase {
         Fizz(3, "Fizz"),
         Buzz(5, "Buzz"),
         Whizz(7, "Whizz");
 
         private int index;
-        private String code;
+        private String content;
 
-        CatchPhrase(int index, String phrase) {
+        catchphrase(int index, String content) {
             this.index = index;
-            this.code = phrase;
+            this.content = content;
         }
 
     }
