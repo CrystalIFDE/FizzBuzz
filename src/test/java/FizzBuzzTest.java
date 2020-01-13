@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class FizzBuzzTest {
 
     @Test
-    public void fizzBuzz() {
+    public void fizz_buzz() {
         assertEquals("1", FizzBuzz.of(1));
         assertEquals("2", FizzBuzz.of(2));
         assertEquals("Fizz", FizzBuzz.of(3));
