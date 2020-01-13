@@ -22,5 +22,9 @@ public class FizzBuzzTest {
         assertEquals("Fizz", FizzBuzz.of(13));
         assertEquals("Whizz", FizzBuzz.of(14));
         assertEquals("Buzz", FizzBuzz.of(15));
+        assertEquals("Fizz", FizzBuzz.of(30));
+        assertEquals("BuzzWhizz", FizzBuzz.of(35));
+        assertEquals("Fizz", FizzBuzz.of(75));
     }
+
 }

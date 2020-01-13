@@ -2,9 +2,9 @@ package com.crystalifde.fizzbuzz.contain;
 
 interface ContainStrategy {
 
-    boolean accept(int input);
+    boolean accept(int index);
 
-    String catchphrase();
+    String catchphrase(int index);
 
     default String assertNotNullAndReturn(String input) {
         assert input != null;

@@ -12,7 +12,7 @@ public class CatchphraseOfContain implements CatchphraseStrategy {
     public String getCatchphraseByIndex(int index) {
         for (ContainStrategy containStrategy : divisibleStrategies) {
             if (containStrategy.accept(index)) {
-                return containStrategy.catchphrase();
+                return containStrategy.catchphrase(index);
             }
         }
         return null;

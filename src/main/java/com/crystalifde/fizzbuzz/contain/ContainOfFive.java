@@ -5,12 +5,12 @@ import com.crystalifde.fizzbuzz.FizzBuzzAlgorithm;
 class ContainOfFive implements ContainStrategy {
 
     @Override
-    public boolean accept(int input) {
-        return String.valueOf(input).contains("5");
+    public boolean accept(int index) {
+        return String.valueOf(index).contains("5");
     }
 
     @Override
-    public String catchphrase() {
-        return assertNotNullAndReturn(FizzBuzzAlgorithm.getCatchphraseByDivisible(5, FizzBuzzAlgorithm.quickFilter(3)));
+    public String catchphrase(int index) {
+        return assertNotNullAndReturn(FizzBuzzAlgorithm.getCatchphraseByDivisible(index, FizzBuzzAlgorithm.quickFilter(3)));
     }
 }
