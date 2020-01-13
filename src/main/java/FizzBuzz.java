@@ -4,7 +4,7 @@ public class FizzBuzz {
 
     }
 
-    public static String fizzBuzz(int index) {
+    public static String of(int index) {
         return "1";
     }
 
