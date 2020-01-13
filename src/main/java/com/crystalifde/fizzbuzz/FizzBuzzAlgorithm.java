@@ -1,13 +1,19 @@
+package com.crystalifde.fizzbuzz;
+
+import jdk.internal.jline.internal.Nullable;
+
 public class FizzBuzzAlgorithm {
 
     public interface Filter<T> {
         boolean shouldFilter(T t);
     }
 
+    @Nullable
     public static String getCatchphraseByDivisible(int number) {
         return getCatchphraseByDivisible(number, null);
     }
 
+    @Nullable
     public static String getCatchphraseByDivisible(int number, Filter<Integer> filter) {
         StringBuilder stringBuilder = new StringBuilder();
         for (catchphrase catchphraseValue : catchphrase.values()) {
@@ -18,20 +24,21 @@ public class FizzBuzzAlgorithm {
                 stringBuilder.append(catchphraseValue.content);
             }
         }
-        return stringBuilder.length() == 0 ? String.valueOf(number) : stringBuilder.toString();
+        return stringBuilder.length() == 0 ? null : stringBuilder.toString();
     }
 
     public static Filter<Integer> quickFilter(int target) {
         return filterNumber -> filterNumber == target;
     }
 
+    @Nullable
     public static String getCatchphraseContentByIndex(int index) {
         for (catchphrase catchphraseValue : catchphrase.values()) {
             if (catchphraseValue.index == index) {
                 return catchphraseValue.content;
             }
         }
-        return String.valueOf(index);
+        return null;
     }
 
     private static boolean isMultipleOf(int number, int target) {

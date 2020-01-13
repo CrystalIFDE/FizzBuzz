@@ -1,3 +1,4 @@
+import com.crystalifde.fizzbuzz.FizzBuzz;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
