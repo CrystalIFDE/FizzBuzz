@@ -37,8 +37,8 @@ public class FizzBuzzAlgorithm {
         return null;
     }
 
-    public static Filter<Integer> quickFilter(int target) {
-        return filterIndex -> filterIndex == target;
+    public static <T> Filter<T> quickFilter(T target) {
+        return filterIndex -> filterIndex.equals(target);
     }
 
     private static boolean isMultipleOf(int index, int target) {
