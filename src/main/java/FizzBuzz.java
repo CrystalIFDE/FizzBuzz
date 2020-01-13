@@ -1,3 +1,5 @@
+import jdk.internal.jline.internal.Nullable;
+
 public class FizzBuzz {
 
     private interface Filter<T> {
@@ -13,13 +15,13 @@ public class FizzBuzz {
     public static String of(int index) {
         String stringIndex = String.valueOf(index);
         if (stringIndex.contains("7")) {
-            return getCatchphraseByDivisible(index, filterNumber -> filterNumber == 5);
+            return getCatchphraseByDivisible(index, quickFilter(5));
         }
         if (stringIndex.contains("5")) {
-            return getCatchphraseByDivisible(index, filterNumber -> filterNumber == 3);
+            return getCatchphraseByDivisible(index, quickFilter(3));
         }
         if (stringIndex.contains("3")) {
-            return "Fizz";
+            return getCatchphraseContentByIndex(3);
         }
         return getCatchphraseByDivisible(index);
     }
@@ -41,6 +43,21 @@ public class FizzBuzz {
         return stringBuilder.length() == 0 ? String.valueOf(number) : stringBuilder.toString();
     }
 
+    private static Filter<Integer> quickFilter(int target) {
+        return filterNumber -> filterNumber == target;
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    @Nullable
+    private static String getCatchphraseContentByIndex(int index) {
+        for (catchphrase catchphraseValue : catchphrase.values()) {
+            if (catchphraseValue.index == index) {
+                return catchphraseValue.content;
+            }
+        }
+        return null;
+    }
+
     private static boolean isMultipleOf(int number, int target) {
         return number % target == 0;
     }
@@ -57,7 +74,6 @@ public class FizzBuzz {
             this.index = index;
             this.content = content;
         }
-
     }
 
 }
