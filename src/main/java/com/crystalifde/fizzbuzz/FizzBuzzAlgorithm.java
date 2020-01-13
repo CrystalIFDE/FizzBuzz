@@ -9,18 +9,18 @@ public class FizzBuzzAlgorithm {
     }
 
     @Nullable
-    public static String getCatchphraseByDivisible(int number) {
-        return getCatchphraseByDivisible(number, null);
+    public static String getCatchphraseByDivisible(int index) {
+        return getCatchphraseByDivisible(index, null);
     }
 
     @Nullable
-    public static String getCatchphraseByDivisible(int number, Filter<Integer> filter) {
+    public static String getCatchphraseByDivisible(int index, Filter<Integer> filter) {
         StringBuilder stringBuilder = new StringBuilder();
         for (catchphrase catchphraseValue : catchphrase.values()) {
             if (filter != null && filter.shouldFilter(catchphraseValue.index)) {
                 continue;
             }
-            if (isMultipleOf(number, catchphraseValue.index)) {
+            if (isMultipleOf(index, catchphraseValue.index)) {
                 stringBuilder.append(catchphraseValue.content);
             }
         }
@@ -28,7 +28,7 @@ public class FizzBuzzAlgorithm {
     }
 
     public static Filter<Integer> quickFilter(int target) {
-        return filterNumber -> filterNumber == target;
+        return filterIndex -> filterIndex == target;
     }
 
     @Nullable
@@ -41,8 +41,8 @@ public class FizzBuzzAlgorithm {
         return null;
     }
 
-    private static boolean isMultipleOf(int number, int target) {
-        return number % target == 0;
+    private static boolean isMultipleOf(int index, int target) {
+        return index % target == 0;
     }
 
     private enum catchphrase {
