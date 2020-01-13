@@ -16,7 +16,7 @@ public class FizzBuzzAlgorithm {
     @Nullable
     public static String getCatchphraseByDivisible(int index, Filter<Integer> filter) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (catchphrase catchphraseValue : catchphrase.values()) {
+        for (Catchphrase catchphraseValue : Catchphrase.values()) {
             if (filter != null && filter.shouldFilter(catchphraseValue.index)) {
                 continue;
             }
@@ -27,13 +27,9 @@ public class FizzBuzzAlgorithm {
         return stringBuilder.length() == 0 ? null : stringBuilder.toString();
     }
 
-    public static Filter<Integer> quickFilter(int target) {
-        return filterIndex -> filterIndex == target;
-    }
-
     @Nullable
-    public static String getCatchphraseContentByIndex(int index) {
-        for (catchphrase catchphraseValue : catchphrase.values()) {
+    public static String queryCatchphraseContentByIndexInEnum(int index) {
+        for (Catchphrase catchphraseValue : Catchphrase.values()) {
             if (catchphraseValue.index == index) {
                 return catchphraseValue.content;
             }
@@ -41,11 +37,15 @@ public class FizzBuzzAlgorithm {
         return null;
     }
 
+    public static Filter<Integer> quickFilter(int target) {
+        return filterIndex -> filterIndex == target;
+    }
+
     private static boolean isMultipleOf(int index, int target) {
         return index % target == 0;
     }
 
-    private enum catchphrase {
+    private enum Catchphrase {
         Fizz(3, "Fizz"),
         Buzz(5, "Buzz"),
         Whizz(7, "Whizz");
@@ -53,7 +53,7 @@ public class FizzBuzzAlgorithm {
         private int index;
         private String content;
 
-        catchphrase(int index, String content) {
+        Catchphrase(int index, String content) {
             this.index = index;
             this.content = content;
         }

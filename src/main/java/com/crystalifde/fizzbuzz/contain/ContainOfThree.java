@@ -11,6 +11,6 @@ class ContainOfThree implements ContainStrategy {
 
     @Override
     public String catchphrase() {
-        return assertNotNullAndReturn(FizzBuzzAlgorithm.getCatchphraseContentByIndex(3));
+        return assertNotNullAndReturn(FizzBuzzAlgorithm.queryCatchphraseContentByIndexInEnum(3));
     }
 }
