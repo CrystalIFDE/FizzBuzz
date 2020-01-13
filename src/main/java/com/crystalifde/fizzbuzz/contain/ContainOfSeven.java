@@ -3,10 +3,6 @@ package com.crystalifde.fizzbuzz.contain;
 import com.crystalifde.fizzbuzz.FizzBuzzAlgorithm;
 
 class ContainOfSeven implements ContainStrategy {
-    @Override
-    public int priority() {
-        return 7;
-    }
 
     @Override
     public boolean accept(int input) {

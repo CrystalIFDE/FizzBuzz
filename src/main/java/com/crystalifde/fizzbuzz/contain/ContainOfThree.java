@@ -3,10 +3,6 @@ package com.crystalifde.fizzbuzz.contain;
 import com.crystalifde.fizzbuzz.FizzBuzzAlgorithm;
 
 class ContainOfThree implements ContainStrategy {
-    @Override
-    public int priority() {
-        return 3;
-    }
 
     @Override
     public boolean accept(int input) {
