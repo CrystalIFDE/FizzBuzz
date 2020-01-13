@@ -12,14 +12,23 @@ public class FizzBuzz {
 
     public static String of(int index) {
         String stringIndex = String.valueOf(index);
-        return getCatchphraseByDivisible(stringIndex);
+        if (stringIndex.contains("7")) {
+            return getCatchphraseByDivisible(index, filterNumber -> filterNumber == 5);
+        }
+        if (stringIndex.contains("5")) {
+            return getCatchphraseByDivisible(index, filterNumber -> filterNumber == 3);
+        }
+        if (stringIndex.contains("3")) {
+            return "Fizz";
+        }
+        return getCatchphraseByDivisible(index);
     }
 
-    private static String getCatchphraseByDivisible(String number) {
+    private static String getCatchphraseByDivisible(int number) {
         return getCatchphraseByDivisible(number, null);
     }
 
-    private static String getCatchphraseByDivisible(String number, Filter<Integer> filter) {
+    private static String getCatchphraseByDivisible(int number, Filter<Integer> filter) {
         StringBuilder stringBuilder = new StringBuilder();
         for (CatchPhrase catchPhraseValue : CatchPhrase.values()) {
             if (filter != null && filter.shouldFilter(catchPhraseValue.index)) {
@@ -29,11 +38,11 @@ public class FizzBuzz {
                 stringBuilder.append(catchPhraseValue.code);
             }
         }
-        return stringBuilder.length() == 0 ? number : stringBuilder.toString();
+        return stringBuilder.length() == 0 ? String.valueOf(number) : stringBuilder.toString();
     }
 
-    private static boolean isMultipleOf(String number, int target) {
-        return Integer.parseInt(number) % target == 0;
+    private static boolean isMultipleOf(int number, int target) {
+        return number % target == 0;
     }
 
     private enum CatchPhrase {
@@ -48,7 +57,6 @@ public class FizzBuzz {
             this.index = index;
             this.code = phrase;
         }
-
 
     }
 
