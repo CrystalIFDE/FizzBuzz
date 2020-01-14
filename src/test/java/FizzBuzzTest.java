@@ -34,4 +34,32 @@ public class FizzBuzzTest {
         Assert.assertEquals("Whizz", FizzBuzz.of(49));
     }
 
+    @Test
+    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_5() {
+        Assert.assertEquals("FizzBuzz", FizzBuzz.of(60));
+        Assert.assertEquals("FizzBuzz", FizzBuzz.of(90));
+        Assert.assertEquals("FizzBuzz", FizzBuzz.of(120));
+    }
+
+    @Test
+    public void should_return_Fizz_when_given_input_can_be_divided_by_5_and_7() {
+        Assert.assertEquals("BuzzWhizz", FizzBuzz.of(70));
+        Assert.assertEquals("BuzzWhizz", FizzBuzz.of(140));
+        Assert.assertEquals("BuzzWhizz", FizzBuzz.of(280));
+    }
+
+    @Test
+    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_7() {
+        Assert.assertEquals("FizzWhizz", FizzBuzz.of(21));
+        Assert.assertEquals("FizzWhizz", FizzBuzz.of(42));
+        Assert.assertEquals("FizzWhizz", FizzBuzz.of(84));
+    }
+
+    @Test
+    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_5_and7() {
+        Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(210));
+        Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(420));
+        Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(840));
+    }
+
 }

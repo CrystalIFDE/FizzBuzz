@@ -9,14 +9,17 @@ public class FizzBuzz {
     }
 
     public static String of(int index) {
+        StringBuilder stringBuilder = new StringBuilder();
         if (index % 3 == 0) {
-            return "Fizz";
-        } else if (index % 5 == 0) {
-            return "Buzz";
-        } else if (index % 7 == 0) {
-            return "Whizz";
+            stringBuilder.append("Fizz");
         }
-        return String.valueOf(index);
+        if (index % 5 == 0) {
+            stringBuilder.append("Buzz");
+        }
+        if (index % 7 == 0) {
+            stringBuilder.append("Whizz");
+        }
+        return stringBuilder.length() == 0 ? String.valueOf(index) : stringBuilder.toString();
     }
 
 }
