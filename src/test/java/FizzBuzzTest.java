@@ -21,42 +21,42 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_5() {
+    public void should_return_Buzz_when_given_input_can_be_divided_by_5() {
         Assert.assertEquals("Buzz", FizzBuzz.of(10));
         Assert.assertEquals("Buzz", FizzBuzz.of(20));
         Assert.assertEquals("Buzz", FizzBuzz.of(25));
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_7() {
+    public void should_return_Whizz_when_given_input_can_be_divided_by_7() {
         Assert.assertEquals("Whizz", FizzBuzz.of(14));
         Assert.assertEquals("Whizz", FizzBuzz.of(28));
         Assert.assertEquals("Whizz", FizzBuzz.of(49));
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_5() {
+    public void should_return_FizzBuzz_when_given_input_can_be_divided_by_3_and_5() {
         Assert.assertEquals("FizzBuzz", FizzBuzz.of(60));
         Assert.assertEquals("FizzBuzz", FizzBuzz.of(90));
         Assert.assertEquals("FizzBuzz", FizzBuzz.of(120));
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_5_and_7() {
+    public void should_return_BuzzWhizz_when_given_input_can_be_divided_by_5_and_7() {
         Assert.assertEquals("BuzzWhizz", FizzBuzz.of(70));
         Assert.assertEquals("BuzzWhizz", FizzBuzz.of(140));
         Assert.assertEquals("BuzzWhizz", FizzBuzz.of(280));
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_7() {
+    public void should_return_FizzWhizz_when_given_input_can_be_divided_by_3_and_7() {
         Assert.assertEquals("FizzWhizz", FizzBuzz.of(21));
         Assert.assertEquals("FizzWhizz", FizzBuzz.of(42));
         Assert.assertEquals("FizzWhizz", FizzBuzz.of(84));
     }
 
     @Test
-    public void should_return_Fizz_when_given_input_can_be_divided_by_3_and_5_and7() {
+    public void should_return_FizzBuzzWhizz_when_given_input_can_be_divided_by_3_and_5_and7() {
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(210));
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(420));
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(840));
