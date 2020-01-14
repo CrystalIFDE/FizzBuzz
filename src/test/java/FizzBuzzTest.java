@@ -56,10 +56,11 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_FizzBuzzWhizz_when_given_input_can_be_divided_by_3_and_5_and7() {
+    public void should_return_FizzBuzzWhizz_when_given_input_can_be_divided_by_3_5_and_7() {
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(210));
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(420));
         Assert.assertEquals("FizzBuzzWhizz", FizzBuzz.of(840));
     }
+
 
 }
